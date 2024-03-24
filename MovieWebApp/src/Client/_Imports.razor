@@ -1,0 +1,41 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Microsoft.AspNetCore.Components.WebAssembly.Http
+@using Microsoft.Extensions.Configuration
+@using Microsoft.Extensions.DependencyInjection
+@using Microsoft.Extensions.Localization
+@using Microsoft.JSInterop
+@using MovieWebApp.Client
+@using MovieWebApp.Client.Shared
+@using MovieWebApp.Client.Pages.Authentication
+@using MovieWebApp.Client.Pages.Multitenancy
+@using MovieWebApp.Client.Components.Common
+@using MovieWebApp.Client.Components.EntityTable
+@using MovieWebApp.Client.Components.Localization
+@using MovieWebApp.Client.Components.Notifications
+@using MovieWebApp.Client.Components.ThemeManager
+@using MovieWebApp.Client.Infrastructure.ApiClient
+@using MovieWebApp.Client.Infrastructure.Auth
+@using MovieWebApp.Client.Infrastructure.Common
+@using MovieWebApp.Client.Infrastructure.Notifications
+@using MovieWebApp.Client.Infrastructure.Preferences
+@using FSH.WebApi.Shared.Authorization
+@using Blazored.LocalStorage
+@using Mapster
+@using MediatR.Courier
+@using MudBlazor
+
+@attribute [Authorize]
+
+@inject NavigationManager Navigation
+@inject ISnackbar Snackbar
+@inject IDialogService DialogService
+@inject IConfiguration Config
+@inject IClientPreferenceManager ClientPreferences
