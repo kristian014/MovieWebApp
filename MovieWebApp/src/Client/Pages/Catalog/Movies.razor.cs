@@ -6,7 +6,7 @@ using MovieWebApp.Client.Infrastructure.ApiClient;
 
 namespace MovieWebApp.Client.Pages.Catalog;
 
-public partial class Movie
+public partial class Movies
 {
     [Inject]
     protected IMoviesClient MoviesClient { get; set; } = default!;
@@ -40,7 +40,7 @@ public partial class Movie
         }
     }
 
-    private string _value { get; set; } = "Nothing selected";
+    private string _value { get; set; }
 
     protected override void OnInitialized() =>
         Context = new(

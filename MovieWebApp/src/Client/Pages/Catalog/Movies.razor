@@ -1,7 +1,7 @@
 ﻿@page "/catalog/movies"
 @attribute [MustHavePermission(FSHAction.View, FSHResource.Movies)]
 
-@inject IStringLocalizer<Movie> L
+@inject IStringLocalizer<Movies> L
 
 <FshTitle Title="@L["Movies"]" Description="@L["Manage Movies."]" />
 
@@ -9,7 +9,7 @@
 
     <AdvancedSearchContent>
         <GenreAutocomplete @bind-Value="SearchGenreId" />
-        <MudSelect MultiSelection="true" @bind-Value="_value" @bind-SelectedValues="OrderByOptions" T="string" Label="@L["Order By"]" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
+        <MudSelect @bind-Value="_value" @bind-SelectedValues="OrderByOptions" T="string" Label="@L["Order By"]" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
             <MudSelectItem T="string" Value="@("Title")">@L["Title"]</MudSelectItem>
             <MudSelectItem T="string" Value="@("ReleaseDate")">@L["Release Date"] </MudSelectItem>
         </MudSelect>

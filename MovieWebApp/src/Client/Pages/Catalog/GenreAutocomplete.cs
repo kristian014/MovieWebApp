@@ -46,7 +46,9 @@ public class GenreAutocomplete : MudAutocomplete<Guid>
     {
         var filter = new SearchGenresRequest
         {
-            PageSize = 10,
+            PageSize = 15,
+            Keyword = value,
+
             AdvancedSearch = new() { Fields = new[] { "name" }, Keyword = value }
         };
 
